@@ -1,0 +1,40 @@
+from pioneer_sdk import *
+import time
+
+def blink():
+    mk.led_control(255, 1, 1, 1)
+    time.sleep(0.5)
+    mk.led_control(255, 0, 0, 0)
+
+mk=Pioneer()
+mk.arm()
+time.sleep(1)
+mk.takeoff()
+try:
+    mk.go_to_local_point_body_fixed(0, 0, 1.5, 0)
+    time.sleep(5)
+    blink()
+    mk.go_to_local_point_body_fixed(0, 1, 0, 0)
+    time.sleep(5)
+    mk.go_to_local_point_body_fixed(0, 0, 0, 3.14/2)
+    blink()
+    time.sleep(5)
+    mk.go_to_local_point_body_fixed(0, 1, 0, 0)
+    time.sleep(5)
+    mk.go_to_local_point_body_fixed(0, 0, 0, 3.14/2)
+    blink()
+    time.sleep(5)
+    mk.go_to_local_point_body_fixed(0, 1, 0, 0)
+    time.sleep(5)
+    mk.go_to_local_point_body_fixed(0, 0, 0, 3.14/2)
+    blink()
+    time.sleep(5)
+    mk.go_to_local_point_body_fixed(0, 1, 0, 0)
+    time.sleep(5)
+    mk.go_to_local_point_body_fixed(0, 0, 0, 3.14/2)
+    blink()
+    time.sleep(5)
+finally:
+    mk.land()
+    time.sleep(5)
+    mk.disarm()
