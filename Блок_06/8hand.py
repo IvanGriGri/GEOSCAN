@@ -5,7 +5,6 @@ mk=Pioneer()
 mk.arm()
 time.sleep(1)
 mk.takeoff()
-time.sleep(2)
 try:
     mk.go_to_local_point_body_fixed(0, 0, 1.5, 0)
     mk.led_control(255, random.randint(0, 100)/100, random.randint(0, 100)/100, random.randint(0, 100)/100)
@@ -13,7 +12,7 @@ try:
     while True:
         if mk.get_dist_sensor_data()<0.1:
             mk.led_control(255, random.randint(0, 100)/100, random.randint(0, 100)/100, random.randint(0, 100)/100)
-        time.sleep(0.2)
+        time.sleep(0.1)
 finally:
     mk.land()
     time.sleep(5)

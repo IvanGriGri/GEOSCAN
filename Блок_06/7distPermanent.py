@@ -3,7 +3,10 @@ import time
 
 mk=Pioneer()
 while True:
-    cl=mk.get_dist_sensor_data()-0.1
+    cl=mk.get_dist_sensor_data()
+    if cl==None:
+        continue
+    cl=cl-0.1
     if cl<0:
         cl=0
     if cl>1:

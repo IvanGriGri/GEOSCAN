@@ -31,5 +31,6 @@ try:
     time.sleep(5)
 finally:
     mk.land()
+    mk.led_control(255, 0, 0, 0)
     time.sleep(5)
     mk.disarm()

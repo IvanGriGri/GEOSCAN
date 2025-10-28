@@ -4,6 +4,8 @@ import time
 mk=Pioneer()
 while True:
     cl=mk.get_dist_sensor_data()
+    if cl==None:
+        continue
     if cl<0.5:
         mk.led_control(255, 1, 0, 0)
     elif cl>0.5 and cl<1:
