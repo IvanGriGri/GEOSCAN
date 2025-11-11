@@ -24,9 +24,9 @@ try:
             mk.go_to_local_point_body_fixed(0, 0, step, 0)
         if key==ord("f"):
             mk.go_to_local_point_body_fixed(0, 0, -1*step, 0)
-        if key==ord("g"):
-            mk.go_to_local_point_body_fixed(0, 0, 0, 3.14/4)
         if key==ord("h"):
+            mk.go_to_local_point_body_fixed(0, 0, 0, 3.14/4)
+        if key==ord("g"):
             mk.go_to_local_point_body_fixed(0, 0, 0, -3.14/4)
         if key==ord("q"):
             break
